@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module StatisLiteralParser
+module StaticLiteralParser
   def self.parse(str, constants)
     parse_(RubyVM::AbstractSyntaxTree.parse(str), constants)
   end

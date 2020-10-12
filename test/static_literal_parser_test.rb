@@ -3,6 +3,14 @@
 require 'test/unit'
 require './lib/static_literal_parser.rb'
 
+ToplevelConstant = Object.new
+
+module TestingModule
+  class YoClass
+    X = 123
+  end
+end
+
 class StaticLiteralParserTest < Test::Unit::TestCase
   def test_literals
     assert_equal(1, StaticLiteralParser.parse('1', {}))
@@ -34,5 +42,18 @@ class StaticLiteralParserTest < Test::Unit::TestCase
     assert_equal([1, 2, 3], StaticLiteralParser.parse('[1, 2, 3]', {}))
     assert_equal([[]], StaticLiteralParser.parse('[[]]', {}))
     assert_equal([1, [2, 3], [], [4]], StaticLiteralParser.parse('[1, [2, 3], [], [4]]', {}))
+  end
+
+  def test_constants
+    assert_equal(ToplevelConstant, StaticLiteralParser.parse('ToplevelConstant', {ToplevelConstant: ToplevelConstant}))
+
+    x = Object.new
+    assert_equal(x, StaticLiteralParser.parse('ToplevelConstant', {ToplevelConstant: x}))
+
+    assert_equal(TestingModule::YoClass::X, StaticLiteralParser.parse('TestingModule::YoClass::X', {
+      'TestingModule': TestingModule,
+      'TestingModule::YoClass': TestingModule::YoClass,
+      'TestingModule::YoClass::X': TestingModule::YoClass::X,
+    }))
   end
 end

@@ -25,7 +25,7 @@ class StaticLiteralParserTest < Test::Unit::TestCase
       StaticLiteralParser.parse('1..3', {}) # DOT2
     }
     assert_raise {
-      StaticLiteralParser.parse('/this #{234}/', {})
+      StaticLiteralParser.parse('/this #{234}/', {}) # DREGX
     }
   end
 

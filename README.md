@@ -25,6 +25,21 @@ StaticLiteralParser is a RubyGems library that you can convert a String to a Rub
 * This uses CRuby's `RubyVM::AbstractSyntaxTree` class
     * This may not work with other Ruby implementations
 
+## API
+
+* `StaticLiteralParser.parse(str, constants)`
+    * Pass a String that can be parsed as Ruby code into str arg. Note that it
+      won't even try to execute anything, any dynamic things will end up raising
+      RuntimeError, such as "#{1 + 2}"
+    * Pass a Hash to constants arg. This hash is only used as constants to
+      lookup in the given str. Note that you must provide all the levels of
+      nested constants that you'd like to parse.
+
+## FAQ
+
+* Q. Why can't local variables, instance variables, or any other variables can't be passed like constants?
+    * A. Simply because the author had not found use cases for that yet. If there are use cases, let's add them.
+
 ## Author
 
 Tatsuhiro Ujihisa

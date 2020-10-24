@@ -9,8 +9,8 @@ module StaticLiteralParser
     case node.type
     when :SCOPE
       parse_(node.children[2], constants)
-    when :LIST, :ZLIST
-      node.children[..-2].map { parse_(_1, constants) }
+    when :LIST, :ZLIST, :ZARRAY, :ARRAY
+      node.children[0..-2].map {|x| parse_(x, constants) }
     when :HASH
       Hash[*parse_(node.children[0], constants)]
     when :LIT, :STR

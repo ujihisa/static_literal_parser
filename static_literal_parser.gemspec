@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'static_literal_parser'
-  s.version     = '0.0.2'
+  s.version     = '1.0.0'
   s.date        = '2020-10-10'
   s.summary     = "summary"
   s.description = "description"

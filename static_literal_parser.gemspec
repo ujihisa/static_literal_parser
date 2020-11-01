@@ -2,8 +2,8 @@
 
 Gem::Specification.new do |s|
   s.name        = 'static_literal_parser'
-  s.version     = '1.1.0'
-  s.date        = '2020-10-24'
+  s.version     = '1.1.1'
+  s.date        = '2020-11-01'
   s.summary     = 'StaticLiteralParser.parse(str, constants)'
   s.description = 'StaticLiteralParser is a RubyGems library that you can convert a String to a Ruby object, parsing the string as an executable Ruby code, but without actually executing it. This internally uses RubyVM::AbstractSyntaxTree to parse to construct the object.'
   s.authors     = ['Tatsuhiro Ujihisa']

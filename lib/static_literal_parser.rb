@@ -13,7 +13,7 @@ module StaticLiteralParser
       node.children[0..-2].map {|x| parse_(x, constants) }
     when :HASH
       Hash[*parse_(node.children[0], constants)]
-    when :LIT, :STR
+    when :LIT, :STR, :NIL
       node.children[0]
     when :CONST
       constants[node.children[0]] or raise "Missing const: #{node.children[0]}"

@@ -51,6 +51,10 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 
 ## Changelog
 
+### 1.1.1
+
+* Support `nil`
+
 ### 1.1.0
 
 * Support Ruby 2.6.6 or any later versions

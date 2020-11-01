@@ -23,6 +23,7 @@ class StaticLiteralParserTest < Test::Unit::TestCase
     assert_equal('hello', StaticLiteralParser.parse('"hello"', {}))
     assert_equal(:world, StaticLiteralParser.parse(':world', {}))
     assert_equal(/this/, StaticLiteralParser.parse('/this/', {}))
+    assert_equal(nil, StaticLiteralParser.parse('nil', {}))
   end
 
   def test_dynamic_stuff_fails

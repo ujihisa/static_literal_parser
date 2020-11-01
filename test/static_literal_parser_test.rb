@@ -57,4 +57,12 @@ class StaticLiteralParserTest < Test::Unit::TestCase
       'TestingModule::YoClass::X': TestingModule::YoClass::X,
     }))
   end
+
+  def test_constants_in_array
+    assert_equal(ToplevelConstant, StaticLiteralParser.parse('ToplevelConstant', ['ToplevelConstant']))
+
+    assert_equal(
+      TestingModule::YoClass::X,
+      StaticLiteralParser.parse('TestingModule::YoClass::X', ['TestingModule::YoClass::X']))
+  end
 end

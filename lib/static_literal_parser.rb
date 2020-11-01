@@ -2,7 +2,14 @@
 
 module StaticLiteralParser
   def self.parse(str, constants)
-    parse_(RubyVM::AbstractSyntaxTree.parse(str), constants)
+    case constants
+    when Array
+      parse(str, constant_strs_array_to_hash(constants))
+    when Hash
+      parse_(RubyVM::AbstractSyntaxTree.parse(str), constants)
+    else
+      raise ArgumentError, "Unsupported constants type: #{constants}"
+    end
   end
 
   private_class_method def self.parse_(node, constants)
@@ -31,5 +38,16 @@ module StaticLiteralParser
     else
       raise "Unexpected node #{node.type}"
     end
+  end
+
+  private_class_method def self.constant_strs_array_to_hash(constant_strs_array)
+    constant_strs_array.flat_map {|constant|
+      constant.split('::').inject([]) {|memo, part|
+        [*memo, [memo.last, part].compact.join('::')]
+      }
+    }.to_h {|name|
+      c = Object.const_get(name)
+      [name.to_sym, c]
+    }
   end
 end

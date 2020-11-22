@@ -51,6 +51,10 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 
 ## Changelog
 
+### 1.2.0
+
+* Support constants in Array as an alternative representation
+
 ### 1.1.1
 
 * Support `nil`

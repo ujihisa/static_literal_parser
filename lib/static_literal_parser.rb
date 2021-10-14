@@ -13,6 +13,7 @@ module StaticLiteralParser
   end
 
   private_class_method def self.parse_(node, constants)
+    return unless node
     case node.type
     when :SCOPE
       parse_(node.children[2], constants)

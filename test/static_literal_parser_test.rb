@@ -67,4 +67,10 @@ class StaticLiteralParserTest < Test::Unit::TestCase
       TestingModule::YoClass::X,
       StaticLiteralParser.parse('TestingModule::YoClass::X', ['TestingModule::YoClass::X']))
   end
+
+  def test_hash
+    assert_equal({a: 1}, StaticLiteralParser.parse('{a: 1}', {}))
+    assert_equal({}, StaticLiteralParser.parse('{}', {}))
+    assert_equal([{}], StaticLiteralParser.parse('[{}]', {}))
+  end
 end

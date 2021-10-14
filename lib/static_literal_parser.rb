@@ -22,6 +22,10 @@ module StaticLiteralParser
       Hash[*parse_(node.children[0], constants)]
     when :LIT, :STR, :NIL
       node.children[0]
+    when :TRUE
+      true
+    when :FALSE
+      false
     when :CONST
       constants[node.children[0]] or raise "Missing const: #{node.children[0]}"
     when :COLON2

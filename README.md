@@ -40,6 +40,12 @@ StaticLiteralParser is a RubyGems library that you can convert a String to a Rub
 * Q. Why can't local variables, instance variables, or any other variables be passed like constants?
     * A. Simply because the author had not found use cases for that yet. If there are use cases, let's add them.
 
+## Development
+
+```
+ruby test/static_literal_parser_test.rb
+```
+
 ## Author
 
 Tatsuhiro Ujihisa

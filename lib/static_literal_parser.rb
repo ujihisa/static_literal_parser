@@ -21,6 +21,8 @@ module StaticLiteralParser
       node.children[0..-2].map {|x| parse_(x, constants) }
     when :HASH
       Hash[*parse_(node.children[0], constants)]
+    when :LIT # Old name for Ruby 3.3 or older. As well as STR and NIL
+      node.children[0]
     when :INTEGER, :FLOAT, :SYM, :IMAGINARY, :RATIONAL, :STR, :REGX, :NIL
       node.children[0]
     when :TRUE

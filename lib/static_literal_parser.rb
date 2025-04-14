@@ -21,7 +21,7 @@ module StaticLiteralParser
       node.children[0..-2].map {|x| parse_(x, constants) }
     when :HASH
       Hash[*parse_(node.children[0], constants)]
-    when :LIT, :STR, :NIL
+    when :INTEGER, :FLOAT, :SYM, :IMAGINARY, :RATIONAL, :STR, :REGX, :NIL
       node.children[0]
     when :TRUE
       true

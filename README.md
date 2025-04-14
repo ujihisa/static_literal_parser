@@ -59,7 +59,7 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 
 ### 1.3.0
 
-* 
+* Support Ruby 3.4+ which uses Prism internally
 
 ### 1.2.0
 

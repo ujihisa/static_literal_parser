@@ -21,6 +21,7 @@ class StaticLiteralParserTest < Test::Unit::TestCase
     assert_equal(1i, StaticLiteralParser.parse('1i', {}))
     assert_equal(2r, StaticLiteralParser.parse('2r', {}))
     assert_equal('hello', StaticLiteralParser.parse('"hello"', {}))
+    assert_equal('hello', StaticLiteralParser.parse("'hello'", {}))
     assert_equal(:world, StaticLiteralParser.parse(':world', {}))
     assert_equal(/this/, StaticLiteralParser.parse('/this/', {}))
     assert_equal(nil, StaticLiteralParser.parse('nil', {}))

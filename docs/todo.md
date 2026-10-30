@@ -9,14 +9,14 @@
 ## Ruby compatibility
 
 * [ ] Define the supported Ruby version range and align CI with it.
-  * **Why:** The CI matrix currently covers Ruby 3.0 through 3.4, while project history and documentation imply support for older versions. The supported range should be clear to users and checked automatically.
-  * **Done when:** The minimum and maximum supported Ruby versions are stated in project documentation, and CI tests the declared range, including its endpoints and the newest supported Ruby version.
+  * **Why:** The changelog says Ruby 2.6.6 or later is supported, but the CI matrix currently covers Ruby 3.0 through 3.4. Users need a clear minimum version, and CI should check both that minimum and a current Ruby version.
+  * **Done when:** The minimum supported Ruby version and the CI compatibility policy are stated in project documentation, and CI tests the declared minimum plus the current Ruby version(s) the project chooses to support.
 
 ## Release information
 
 * [ ] Reconcile the gemspec release metadata with the project changelog and published releases.
   * **Why:** The gemspec date is `2020-11-01`, while the changelog ends at version 1.3.1 and later commits contain compatibility updates. Inconsistent metadata makes it difficult to tell what has actually been released and supported.
-  * **Done when:** The gem version, release date (if retained), and changelog entries accurately describe the published releases; unreleased changes are clearly distinguished from released changes.
+  * **Done when:** The gemspec version and date (if retained) are checked against the published gem history, the changelog accurately describes released versions, and any unreleased changes are clearly labeled as unreleased.
 
 ## CI improvements
 

@@ -20,6 +20,10 @@
 
 ## CI improvements
 
+* [ ] Upgrade the GitHub Actions checkout action from its legacy major version.
+  * **Why:** The workflow uses `actions/checkout@v2`, while the upstream action has newer maintained major releases. Staying on the old major risks incompatibility with current GitHub-hosted runners and misses upstream fixes.
+  * **Done when:** The workflow uses a supported `actions/checkout` major version and its push and pull request runs complete successfully.
+
 * [ ] Add a gem build check to GitHub Actions.
   * **Why:** The existing workflow runs the test script but does not check that the gem can be packaged from the repository contents.
   * **Done when:** CI successfully builds the gem from the checked-out source, and a packaging failure causes the workflow to fail.

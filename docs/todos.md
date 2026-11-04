@@ -2,8 +2,8 @@
 
 ## Release information
 
-* [ ] Reconcile the gemspec release metadata with the project changelog and published releases.
-  * **Why:** The gemspec date is `2020-11-01`, while the changelog ends at version 1.3.1 and later commits contain compatibility updates. Inconsistent metadata makes it difficult to tell what has actually been released and supported.
+* [x] Reconcile the gemspec release metadata with the project changelog and published releases.
+  * **Why:** The gemspec previously listed `2020-11-01`, while the changelog omitted published version 1.3.0. Inconsistent metadata made it difficult to tell what had actually been released and supported.
   * **Done when:** The gemspec version and date (if retained) are checked against the published gem history, the changelog accurately describes released versions, and any unreleased changes are clearly labeled as unreleased.
 
 ## CI improvements

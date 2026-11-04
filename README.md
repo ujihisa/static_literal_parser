@@ -57,9 +57,14 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 
 ## Changelog
 
-### 1.3.1
+### 1.3.1 (2025-04-14)
 
 * Support Ruby 3.4+ which uses Prism internally
+* Keep compatibility with older Ruby versions
+
+### 1.3.0 (2025-04-14)
+
+* Add support for Ruby 3.4+ which uses Prism internally
 
 ### 1.2.0
 

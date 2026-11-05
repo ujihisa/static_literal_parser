@@ -22,3 +22,5 @@ jobs:
           ruby-version: ${{ matrix.ruby-version }}
       - name: Run tests
         run: ruby test/static_literal_parser_test.rb
+      - name: Build gem
+        run: gem build static_literal_parser.gemspec

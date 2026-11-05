@@ -8,8 +8,8 @@
 
 ## CI improvements
 
-* [ ] Add a gem build check to GitHub Actions.
-  * **Why:** The existing workflow runs the test script but does not check that the gem can be packaged from the repository contents.
+* [x] Add a gem build check to GitHub Actions.
+  * **Why:** The workflow previously ran the test script without checking whether the gem could be packaged from the repository contents.
   * **Done when:** CI successfully builds the gem from the checked-out source, and a packaging failure causes the workflow to fail.
 
 * [ ] Upgrade the GitHub Actions checkout action from its legacy major version.

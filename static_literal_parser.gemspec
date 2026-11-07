@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Tatsuhiro Ujihisa']
   s.email       = 'ujihisa at gmail com'
   s.files       = ['lib/static_literal_parser.rb']
+  s.required_ruby_version = '>= 2.6.6'
   s.homepage    = 'https://github.com/ujihisa/static_literal_parser'
   s.license     = 'GPL-3.0-or-later'
 end

@@ -24,6 +24,7 @@ StaticLiteralParser is a RubyGems library that you can convert a String to a Rub
 * This does not depend on any other libraries
 * This uses CRuby's `RubyVM::AbstractSyntaxTree` class
     * This may not work with other Ruby implementations
+* Requires CRuby 2.6.6 or later
 
 ## API
 

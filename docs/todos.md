@@ -18,8 +18,8 @@
 
 ## Ruby compatibility
 
-* [ ] Define the supported Ruby version range and align CI with it.
-  * **Why:** The changelog says Ruby 2.6.6 or later is supported, but the CI matrix currently covers Ruby 3.0 through 3.4. Users need a clear minimum version, and CI should check both that minimum and a current Ruby version.
+* [x] Define the supported Ruby version range and align CI with it.
+  * **Why:** The changelog says Ruby 2.6.6 or later is supported, but the CI matrix originally covered Ruby 3.0 through 3.4. Users need a clear minimum version, and CI should check both that minimum and a current Ruby version.
   * **Done when:** The minimum supported Ruby version and the CI compatibility policy are stated in project documentation, and CI tests the declared minimum plus the current Ruby version(s) the project chooses to support.
 
 ## Parser correctness

@@ -61,6 +61,20 @@ class StaticLiteralParserTest < Test::Unit::TestCase
     }))
   end
 
+  def test_falsey_constants
+    assert_equal([false, nil], StaticLiteralParser.parse('[FalseConstant, NilConstant]', {
+      FalseConstant: false,
+      NilConstant: nil,
+    }))
+
+    assert_equal([false, nil], StaticLiteralParser.parse('[TestingModule::YoClass::FalseValue, TestingModule::YoClass::NilValue]', {
+      'TestingModule': TestingModule,
+      'TestingModule::YoClass': TestingModule::YoClass,
+      'TestingModule::YoClass::FalseValue': false,
+      'TestingModule::YoClass::NilValue': nil,
+    }))
+  end
+
   def test_constants_in_array
     assert_equal(ToplevelConstant, StaticLiteralParser.parse('ToplevelConstant', ['ToplevelConstant']))
 

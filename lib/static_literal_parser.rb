@@ -30,13 +30,14 @@ module StaticLiteralParser
     when :FALSE
       false
     when :CONST
-      constants[node.children[0]] or raise "Missing const: #{node.children[0]}"
+      constants.fetch(node.children[0]) { raise "Missing const: #{node.children[0]}" }
     when :COLON2
       (parent, child) = node.children
       case parent.type
       when :CONST, :COLON2
         parent = parse_(parent, constants)
-        constants[:"#{parent}::#{child}"] or raise "Missing nested const: #{[parent, child]}"
+        name = :"#{parent}::#{child}"
+        constants.fetch(name) { raise "Missing nested const: #{[parent, child]}" }
       else
         raise "Unexpected COLON2 parent #{parent.type}"
       end

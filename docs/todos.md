@@ -24,7 +24,7 @@
 
 ## Parser correctness
 
-* [ ] Treat explicitly supplied `false` and `nil` constants as present values.
+* [x] Treat explicitly supplied `false` and `nil` constants as present values.
   * **Why:** Constant lookup currently uses a truthiness check, so valid values can be mistaken for missing constants. This affects both top-level and nested constant lookup.
   * **Done when:** Lookup distinguishes a missing key from a key whose value is `false` or `nil`, and regression tests cover both values at the top level and in nested constants.
 

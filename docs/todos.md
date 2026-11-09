@@ -4,7 +4,7 @@
 
 * [ ] Release version 1.3.2 with the false/nil constant lookup fix.
   * **Why:** The fix is committed in the repository, but the published gem remains at 1.3.1 and does not contain it.
-  * **Done when:** The gemspec and changelog identify version 1.3.2, the gem builds successfully, and version 1.3.2 is published on RubyGems.
+  * **Done when:** The gemspec and changelog identify version 1.3.2, the gem builds successfully, version 1.3.2 is published on RubyGems, and RubyGems.org confirms it as the latest version.
 
 * [x] Reconcile the gemspec release metadata with the project changelog and published releases.
   * **Why:** The gemspec previously listed `2020-11-01`, while the changelog omitted published version 1.3.0. Inconsistent metadata made it difficult to tell what had actually been released and supported.

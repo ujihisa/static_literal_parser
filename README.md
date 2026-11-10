@@ -58,6 +58,10 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 
 ## Changelog
 
+### 1.3.2 (2026-11-11)
+
+* Resolve explicitly provided `false` and `nil` constants, including nested constants
+
 ### 1.3.1 (2025-04-14)
 
 * Support Ruby 3.4+ which uses Prism internally

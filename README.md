@@ -60,7 +60,7 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 
 ### 1.3.2 (2026-11-11)
 
-* Resolve explicitly provided `false` and `nil` constants, including nested constants
+* Correctly resolve top-level and nested constants whose supplied values are `false` or `nil`
 
 ### 1.3.1 (2025-04-14)
 

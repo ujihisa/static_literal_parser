@@ -2,8 +2,8 @@
 
 ## Release information
 
-* [ ] Release version 1.3.2 with the false/nil constant lookup fix.
-  * **Why:** The fix is committed in the repository, but the published gem remains at 1.3.1 and does not contain it.
+* [x] Release version 1.3.2 with the false/nil constant lookup fix.
+  * **Why:** Users need a published gem containing the false/nil constant lookup fix, and the release should be verifiable on RubyGems.org.
   * **Done when:** The gemspec and changelog identify version 1.3.2, the gem builds successfully, version 1.3.2 is published on RubyGems, and RubyGems.org confirms it as the latest version.
 
 * [x] Reconcile the gemspec release metadata with the project changelog and published releases.

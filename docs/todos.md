@@ -20,6 +20,24 @@
   * **Why:** The workflow previously used `actions/checkout@v2`, an old major that risked incompatibility with current GitHub-hosted runners and missed upstream fixes.
   * **Done when:** The workflow uses a supported `actions/checkout` major version and its push and pull request runs complete successfully.
 
+* [ ] Test the built gem as an installed package in CI.
+  * **Why:** The workflow builds the gem, but the test suite loads the library directly from `lib/`, so it would not catch a package that builds but cannot be installed or loaded correctly.
+  * **Done when:** CI installs the generated gem into an isolated gem home and successfully requires and exercises the installed package, separately from the source-tree test run.
+
+* [ ] Limit GitHub Actions to the permissions required by the test workflow.
+  * **Why:** The workflow only checks out source, runs tests, and builds the gem, but the repository currently grants `GITHUB_TOKEN` write permissions by default and allows Actions to approve pull requests.
+  * **Done when:** The workflow explicitly grants only `contents: read`, the repository default token permission is read-only, and Actions is not allowed to create or approve pull requests; the workflow still succeeds.
+
+* [ ] Require successful CI checks before merging changes to `master`.
+  * **Why:** There is no branch protection rule or ruleset, so pull requests can be merged even when the Ruby matrix fails.
+  * **Done when:** A rule targets `master`, requires pull requests and the Ruby matrix checks to pass before merging, and its bypass policy matches the repository's intended maintenance workflow.
+
+## Security documentation
+
+* [ ] Clarify the security guarantees and limits of parsing untrusted Ruby strings.
+  * **Why:** The repository description says parsing without `eval` makes the parser safe, but the array-based constants API uses `Object.const_get`, which follows Ruby's normal constant lookup behavior and may invoke autoloading or `const_missing`; the parser also has no resource limits for hostile inputs.
+  * **Done when:** The repository description and README explain that source expressions are parsed rather than evaluated, describe side effects possible through array-based constant lookup, avoid presenting the gem as a general sandbox, and document any input-size or trust assumptions.
+
 ## Ruby compatibility
 
 * [x] Define the supported Ruby version range and align CI with it.

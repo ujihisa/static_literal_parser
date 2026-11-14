@@ -35,7 +35,7 @@
 ## Security documentation
 
 * [ ] Clarify the security guarantees and limits of parsing untrusted Ruby strings.
-  * Why: The repository description says parsing without `eval` makes the parser safe, but the array-based constants API uses `Object.const_get`, which follows Ruby's normal constant lookup behavior and may invoke autoloading or `const_missing`; the parser also has no resource limits for hostile inputs.
+  * Why: The repository description says parsing without `eval` makes the parser safe, but the array-based constants API uses `Object.const_get`, which follows Ruby's normal constant lookup behaviour and may invoke autoloading or `const_missing`; the parser also has no resource limits for hostile inputs.
   * Done when: The repository description and README explain that source expressions are parsed rather than evaluated, describe side effects possible through array-based constant lookup, avoid presenting the gem as a general sandbox, and document any input-size or trust assumptions.
 
 ## Ruby compatibility

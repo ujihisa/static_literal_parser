@@ -42,7 +42,7 @@ module StaticLiteralParser
         raise "Unexpected COLON2 parent #{parent.type}"
       end
     when :DSTR, :DOT2, :DREGX
-      raise "Unsupported node: #{node.type}\nStaticLiteralParser does not support any dyanmic evaluations."
+      raise "Unsupported node: #{node.type}\nStaticLiteralParser does not support any dynamic evaluations."
     else
       raise "Unexpected node #{node.type}"
     end

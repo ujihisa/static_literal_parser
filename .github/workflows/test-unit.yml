@@ -20,7 +20,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-      - name: Run tests
-        run: ruby test/static_literal_parser_test.rb
+      - name: Run tests from source
+        run: ruby -Ilib test/static_literal_parser_test.rb
       - name: Build gem
         run: gem build static_literal_parser.gemspec
+      - name: Install built gem
+        run: gem install --local --install-dir "$RUNNER_TEMP/gem-home" static_literal_parser-*.gem
+      - name: Run tests against installed gem
+        env:
+          GEM_HOME: ${{ runner.temp }}/gem-home
+        run: ruby test/static_literal_parser_test.rb

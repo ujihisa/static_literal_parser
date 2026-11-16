@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'test/unit'
-require './lib/static_literal_parser.rb'
+require 'static_literal_parser'
 
 ToplevelConstant = Object.new
 

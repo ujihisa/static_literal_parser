@@ -20,7 +20,7 @@
   * Why: The workflow previously used `actions/checkout@v2`, an old major that risked incompatibility with current GitHub-hosted runners and missed upstream fixes.
   * Done when: The workflow uses a supported `actions/checkout` major version and its push and pull request runs complete successfully.
 
-* [ ] Test the built gem as an installed package in CI.
+* [x] Test the built gem as an installed package in CI.
   * Why: The workflow builds the gem, but the test suite loads the library directly from `lib/`, so it would not catch a package that builds but cannot be installed or loaded correctly.
   * Done when: CI installs the generated gem into an isolated gem home and successfully requires and exercises the installed package, separately from the source-tree test run.
 
